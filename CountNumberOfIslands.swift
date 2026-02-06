@@ -1,6 +1,6 @@
 //
 //  CountNumberOfIslands.swift
-//  DeleteItProj
+//  NumberOfIslandCountProj
 //
 //  Created by Kundan Kumar on 06/02/26.
 //
@@ -127,35 +127,35 @@ struct AnimatedIslandView: View {
     AnimatedIslandView()
 }
 
-class Solution {
-    func numIslands(_ grid: [[String]]) -> Int {
-        var grid = grid
-        var count = 0
+// class Solution {
+//     func numIslands(_ grid: [[String]]) -> Int {
+//         var grid = grid
+//         var count = 0
         
-        for r in 0..<grid.count {
-            for c in 0..<grid[0].count {
-                if grid[r][c] == "1" {
-                    count += 1
-                    dfs(&grid, r, c)
-                }
-            }
-        }
-        return count
-    }
+//         for r in 0..<grid.count {
+//             for c in 0..<grid[0].count {
+//                 if grid[r][c] == "1" {
+//                     count += 1
+//                     dfs(&grid, r, c)
+//                 }
+//             }
+//         }
+//         return count
+//     }
     
-    private func dfs(_ grid: inout [[String]], _ r: Int, _ c: Int) {
-        // Check boundaries and if cell is land
-        guard r >= 0, r < grid.count, c >= 0, c < grid[0].count, grid[r][c] == "1" else {
-            return
-        }
+//     private func dfs(_ grid: inout [[String]], _ r: Int, _ c: Int) {
+//         // Check boundaries and if cell is land
+//         guard r >= 0, r < grid.count, c >= 0, c < grid[0].count, grid[r][c] == "1" else {
+//             return
+//         }
         
-        // Mark as visited by sinking the island
-        grid[r][c] = "0"
+//         // Mark as visited by sinking the island
+//         grid[r][c] = "0"
         
-        // Recursively visit neighbors
-        dfs(&grid, r + 1, c) // Down
-        dfs(&grid, r - 1, c) // Up
-        dfs(&grid, r, c + 1) // Right
-        dfs(&grid, r, c - 1) // Left
-    }
-}
+//         // Recursively visit neighbors
+//         dfs(&grid, r + 1, c) // Down
+//         dfs(&grid, r - 1, c) // Up
+//         dfs(&grid, r, c + 1) // Right
+//         dfs(&grid, r, c - 1) // Left
+//     }
+// }
